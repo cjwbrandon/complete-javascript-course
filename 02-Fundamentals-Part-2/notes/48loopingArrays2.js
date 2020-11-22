@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 // Looping Backwards and Loops in Loops
 

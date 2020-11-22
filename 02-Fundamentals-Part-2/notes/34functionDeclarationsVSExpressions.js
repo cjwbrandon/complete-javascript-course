@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 //Function Declarations vs. Expressions
 

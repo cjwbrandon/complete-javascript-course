@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 // Functions -> fundamental building block
 // A piece of code that can be reused over and over again

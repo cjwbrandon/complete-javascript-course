@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 // Dot vs. Bracket Notation
 

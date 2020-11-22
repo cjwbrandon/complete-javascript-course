@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 // Data Structure: Objects
 // Idea: Giving elements a name

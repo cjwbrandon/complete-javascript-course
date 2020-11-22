@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 // Basic Array Operations (Methods)
 
