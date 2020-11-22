@@ -1,3 +1,5 @@
+'use-strict';
+
 // Arrow Function
 // Special form of function Expressions that is shorter and faster to write
 

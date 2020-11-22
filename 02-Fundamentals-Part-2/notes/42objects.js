@@ -1,3 +1,5 @@
+'use-strict';
+
 // Data Structure: Objects
 // Idea: Giving elements a name
 // Key-value pairs

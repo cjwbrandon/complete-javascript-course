@@ -1,3 +1,5 @@
+'use-strict';
+
 // Data Structure - Arrays
 
 const friend1 = 'Michael';

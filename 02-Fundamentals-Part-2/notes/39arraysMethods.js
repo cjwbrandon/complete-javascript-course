@@ -1,3 +1,5 @@
+'use-strict';
+
 // Basic Array Operations (Methods)
 
 const friends = ['Michael', 'Steven', 'Peter'];

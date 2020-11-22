@@ -1,3 +1,5 @@
+'use-strict';
+
 // Reviewing Functions
 
 // Note: Parameters in different functions can have the same Parameter Names

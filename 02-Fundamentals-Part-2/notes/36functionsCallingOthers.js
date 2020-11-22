@@ -1,3 +1,5 @@
+'use-strict';
+
 // Functions Calling Other Functions
 
 // Example

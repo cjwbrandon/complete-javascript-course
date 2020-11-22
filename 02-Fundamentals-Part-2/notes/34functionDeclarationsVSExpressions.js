@@ -1,3 +1,5 @@
+'use-strict';
+
 //Function Declarations vs. Expressions
 
 // Calling a function before
