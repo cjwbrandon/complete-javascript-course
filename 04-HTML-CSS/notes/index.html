@@ -1,0 +1,65 @@
+<!-- Used to describe content of a web pages -->
+<!-- Made up of elements written in opening and closing tabs -->
+
+<!-- Bare bones structure type "!" + "tab" -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Settings of the webpage e.g. CSS styles, FATF icons -->
+    <!-- We usually separate the CSS script to a external script -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- <style>
+      /* Many type of selectors - basic element selector */
+      /* Inline way of writing CSS styling */
+      body {
+        property name: value
+        background-color: green;
+      }
+    </style> -->
+
+    <title>Learning HTML & CSS</title>
+  </head>
+  <body>
+    <!-- What is visible on the webpage -->
+    <!-- Difference elements have diff purposes e.g. h1 (headings), p (paragraphs), etc -->
+    <!-- Child elements of the element body -->
+    <h1>JavaScript is fun, but so is HTML & CSS!</h1>
+    <p class="first">
+      You can learn JavaScript without HTML and CSS, but for DOM manipulation,
+      it's useful to have some basic ideas of HTML & CSS.
+
+      <!-- Attributes are used to describe Elements -->
+      <!-- Example: specify a URL with the text -->
+      <!-- Anchor element is an inline element -->
+      You can learn more about it with
+      <a href="https://www.udemy.com/user/jonasschmedtmann/">Jonas on Udemy</a>.
+    </p>
+    <!-- Block element, heading creates a new line -->
+    <h2>Another heading</h2>
+    <p class="second">Just another paragraph</p>
+
+    <!-- Image element -->
+    <!-- Naming convention in html is separated by - -->
+    <img
+      id="course-image"
+      src="https://img-b.udemycdn.com/course/240x135/437398_46c3_9.jpg?secure=fw-d7trepV38_4GuuUEONg%3D%3D%2C1606164714"
+    />
+
+    <!-- Boxes - many ways to create -->
+    <!-- Try to use informative elements -->
+    <form id="your-name">
+      <h2>Your name here</h2>
+      <p class="first">Please fill in this form :)</p>
+      <input type="text" placeholder="Your name" />
+      <button>OK!</button>
+    </form>
+  </body>
+</html>
+
+<!-- Classes and IDs -->
+<!-- Used to name Elements to identify them -->
+<!-- Example, so that CSS can identify them to style them -->
+<!-- IDs have to be unique while classes can be used multiple times -->
+<!-- We rarely use IDs -->

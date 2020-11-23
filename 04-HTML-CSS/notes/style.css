@@ -1,0 +1,68 @@
+/* Global Reset - margins on all elements */
+* {
+  margin: 0;
+  padding: 0;
+  /* include padding and borders into the width or height on an element */
+  box-sizing: border-box;
+}
+
+/* element selector */
+body {
+  /* property name: value */
+  background-color: rgb(241, 241, 195);
+  /* All child in the body element will inherit */
+  font-family: Arial;
+  /* Not all is applied, e.g. font-size applies to most text except for headers that have pre-defined font sizes */
+  font-size: 20px;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  /* center inside the h2 box */
+  text-align: center;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Applying to 2 selectors */
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: yellowgreen;
+}
+
+/* class selector */
+.first {
+  color: red;
+}
+
+/* id selector */
+#your-name {
+  background-color: rgb(216, 216, 142);
+  border: 5px solid rgb(100, 79, 79);
+  width: 400px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+/* Selecting child elements */
+#your-name h2 {
+  color: olivedrab;
+}
+
+#course-image {
+  /* if you only specify either height or width, the other will scale based on the aspect ratio */
+  width: 300px;
+}
