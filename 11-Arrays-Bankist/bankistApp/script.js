@@ -64,12 +64,15 @@ const inputClosePin = document.querySelector('.form__input--pin');
 // 144. Creating DOM Elements
 // Best practice to always try to create a function rather than write in global -> passing data in a function rather than a use global variable
 // Adding movements
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   // Remove existing elements in the HTML first
   // innerHTML returns all the HTML text
   containerMovements.innerHTML = '';
 
-  movements.forEach(function (mov, i) {
+  // Sorting
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
@@ -237,6 +240,14 @@ btnClose.addEventListener('click', function (e) {
 
   // Clear inputs
   inputCloseUsername.value = inputClosePin.value = '';
+});
+
+// Sort movements
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
