@@ -137,6 +137,7 @@ const updateUI = function (acc) {
 // Event handler
 let currentAccount;
 
+// Login
 // Note: hitting 'Enter' behaves as a click
 btnLogin.addEventListener('click', function (e) {
   // Note: form element -> default behaviour is to reload when clicked
@@ -165,6 +166,7 @@ btnLogin.addEventListener('click', function (e) {
   }
 });
 
+// Transfer
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -190,6 +192,31 @@ btnTransfer.addEventListener('click', function (e) {
     // Update UI
     updateUI(currentAccount);
   }
+});
+
+// Closing Acocunt
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Recall Optional Chaining
+  if (
+    inputCloseUsername.value === currenAccount &&
+    currentAccount.pin === Number(inputClosePin.value)
+  ) {
+    // findIndexMethod
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // Hide UI
+    contianerApp.style.opacity = 0;
+  }
+
+  // Clear inputs
+  inputCloseUsername.value = inputClosePin.value = '';
 });
 
 /////////////////////////////////////////////////
