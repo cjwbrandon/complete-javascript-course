@@ -194,6 +194,26 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+// Loans
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  // Check that amount is positive and there is a deposit that is 10% of the amount
+  // Using some
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movmeents.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+
+  // Clear Inputs
+  inputLoanAmount.value = '';
+});
+
 // Closing Acocunt
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
