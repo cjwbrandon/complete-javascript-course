@@ -1,5 +1,7 @@
 'use strict';
 
+const section1 = document.querySelector('#section--1');
+
 ///////////////////////////////////////
 // 191 Implementing a Sticky Navigation: The Scroll Event
 // Sticky Navigation
