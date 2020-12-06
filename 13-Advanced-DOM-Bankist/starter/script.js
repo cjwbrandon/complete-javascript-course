@@ -77,7 +77,8 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 ///////////////////////////////////////
-// Menu fade animaiton
+// 190 Passing Arguments to Event Handlers
+// Menu fade animation
 const handleHover = function (e) {
   // opacity
   if (e.target.classList.contains('nav__link')) {
