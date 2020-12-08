@@ -51,7 +51,7 @@ class PersonCl {
     else alert(`${name} is not a full name!`);
   }
 
-  get _fullName() {
+  get fullName() {
     return this._fullName;
   }
 
