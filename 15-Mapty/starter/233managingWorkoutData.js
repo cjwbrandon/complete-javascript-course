@@ -11,6 +11,7 @@ const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 
+// Managing Workout Data: Creating Classes
 class Workout {
   data = new Date();
   id = (Date.now() + '').slice(-10);
@@ -49,6 +50,10 @@ class Cycling extends Workout {
     return this.speed;
   }
 }
+
+const run1 = new Running([39, -12], 5.2, 24, 178);
+const cycle1 = new Cycling([39, -12], 27, 95, 523);
+console.log(run1, cycle1);
 
 ////////////////////////////////
 // APPLICATION ARCHITECTURE
