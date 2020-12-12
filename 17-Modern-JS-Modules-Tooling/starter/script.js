@@ -84,10 +84,10 @@
 // Used in Node.js
 // Most repos in npm is implemented in CommonJS
 // Note: Won't work in the browser but will in Node.js -> export is not defined in the browser but is in Node.js
-export.addToCart = function (product, quantity) {
-  cart.push({ product, quantity });
-  console.log(`${quantity} ${product} added to cart`);
-};
+// export.addToCart = function (product, quantity) {
+//   cart.push({ product, quantity });
+//   console.log(`${quantity} ${product} added to cart`);
+// };
 
-// Import
-const { addToCart } = require('./shoppingCart.js')
+// // Import
+// const { addToCart } = require('./shoppingCart.js')
