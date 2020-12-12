@@ -24,13 +24,21 @@ const renderCountry = function (data, className = '') {
 };
 
 ///////////////////////////////////////
-// Chaining Promises
-// A flat chain of promises compared to callback hell
+// Handling Rejected Promises
+// Usually when the user loses internet connection
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  countriesContainer.style.opacity = 1;
+};
 
 const getCountryData = function (country) {
   // Country 1
   const request = fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-    .then(response => response.json())
+    // Error handling -> pass in 2nd callback function of then
+    .then(
+      response => response.json()
+      // err => alert(err) // Error handling/catching -> customise
+    )
     .then(data => {
       renderCountry(data[0]);
       const neighbour = data[0].borders[0];
@@ -42,8 +50,31 @@ const getCountryData = function (country) {
       // Receives the return value
       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
     })
-    .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then(
+      response => response.json()
+      // err => alert(err) // Error handling/catching
+    )
+    .then(data => renderCountry(data, 'neighbour'))
+    // Catch any errors in the chain -> global
+    .catch(err => {
+      console.error(err);
+      renderError(`Something went wrong ${err.message}. Try again!`);
+    })
+    // Always be called, whether fulfilled or rejected
+    .finally(() => {
+      // Code that must be executed regardless of the results
+      countriesContainer.style.opacity = 1;
+    });
 };
 
-getCountryData('singapore');
+// Simulate: Change Network to offline then click on button
+// ERR_INTERNET_DISCONNECTED -> TypeError: Failed to fetch
+btn.addEventListener('click', function () {
+  getCountryData('singapore');
+});
+
+// Undefined flag error
+getCountryData('asjflasekafs');
+
+// Note: Errors in the API is not picked up by the catch.
+// e.g. 404 status code is considered as the promise was fulfilled -> Successfully received a response
