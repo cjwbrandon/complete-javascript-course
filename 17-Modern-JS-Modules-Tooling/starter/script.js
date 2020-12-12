@@ -91,3 +91,30 @@
 
 // // Import
 // const { addToCart } = require('./shoppingCart.js')
+
+// Video 270: Introduction to NPM
+// Importing from Lodash-es
+import cloneDeep from './node_modules/lodash-es/cloneDeep';
+
+const state = {
+  cast: [
+    {
+      product: 'bread',
+      quantity: 5,
+    },
+    {
+      product: 'pizza',
+      quantity: 5,
+    },
+  ],
+  user: { loggedIn: true },
+};
+
+// Shallow clone
+const stateClone = Object.assign({}, state);
+// Deep clone
+const stateDeepClone = cloneDeep(state);
+state.user.loggedIn = false;
+console.log(stateClone);
+console.log(state);
+console.log(stateDeepClone);
