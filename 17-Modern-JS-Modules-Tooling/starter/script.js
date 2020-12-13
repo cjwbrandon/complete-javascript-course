@@ -24,20 +24,20 @@
 // console.log(ShoppingCart.totalPrice);
 
 // // Importing default exports
-// import add, { cart } from './shoppingCart.js';
-// add('pizza', 2);
+import add, { cart } from './shoppingCart.js';
+add('pizza', 2);
 
-// // Mixing default and named exports -> Not desireable to mix exports
-// // import add, {
-// //   addToCart,
-// //   totalPrice as price,
-// //   totalQuantity,
-// // } from './shoppingCart.js';
-// // console.log(price);
+// Mixing default and named exports -> Not desireable to mix exports
+// import add, {
+//   addToCart,
+//   totalPrice as price,
+//   totalQuantity,
+// } from './shoppingCart.js';
+// console.log(price);
 
-// // Live connection -> Not copies -> Points to the same place in memory
-// add('bread', 5);
-// add('apples', 4);
+// Live connection -> Not copies -> Points to the same place in memory
+add('bread', 5);
+add('apples', 4);
 
 // // cart is manipulated by the add function
 // // is not simply a copy since cart is an empty array
@@ -94,7 +94,10 @@
 
 // Video 270: Introduction to NPM
 // Importing from Lodash-es
-import cloneDeep from './node_modules/lodash-es/cloneDeep';
+// import cloneDeep from './node_modules/lodash-es/cloneDeep';
+// With parcel
+import cloneDeep from 'lodash-es';
+// Parcel works with CommonJS modules as well
 
 const state = {
   cast: [
@@ -118,3 +121,21 @@ state.user.loggedIn = false;
 console.log(stateClone);
 console.log(state);
 console.log(stateDeepClone);
+
+// Video 271: Bundling with Parcel and NPM Scripts
+// Triggers a rebuilt whenever something is changed
+if (module.hot) {
+  module.hot.accept();
+}
+// Note: State is maintained
+
+// Video 272: Configuring Babel and Polyfilling
+// Plugins -> Experimental features must be included manaully
+
+// Babel cannot transpile new syntax such as Promises and .find
+// Solution: Polyfilling
+import 'core-js/stable';
+// import 'core-js/stable/array/find'; // Manually polyfilling
+
+// Polyfilling async functions
+import 'regenerator-runtime/runtime';
